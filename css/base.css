@@ -1,0 +1,103 @@
+/* ===================================
+   base.css - Fundamental Styles
+  ==================================== */
+
+/* -----------------------------------
+  1. RESET
+  ------------------------------------ */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Remove default list styles */
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+img {
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+/* Form elements consistency */
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  border: none;
+  background: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* -----------------------------------
+  2. @FONT-FACE (Font imports)
+  ------------------------------------ */
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/Montserrat-Regular.ttf") format(trueType);
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/Montserrat-Bold.ttf") format(trueType);
+  font-weight: 700;
+  font-display: swap;
+}
+
+/* -----------------------------------
+  3. GLOBAL STYLES (html, body)
+  ------------------------------------ */
+
+body {
+  font-family: var(--ff-body);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-regular);
+  color: var(--clr-text-primary);
+  background-color: var(--clr-bg-body);
+}
+
+/* -----------------------------------
+  4. GLOBAL TYPOGRAPHY (headings)
+  ------------------------------------ */
+h1,
+h2 {
+  font-weight: var(--fw-bold);
+  line-height: 1.2;
+}
+
+/* Default sizes */
+h1 {
+  font-size: var(--fs-h1);
+  color: var(--clr-text-primary);
+}
+
+h2 {
+  font-size: var(--fs-h2);
+}
+
+/* -----------------------------------
+  6. BASE UTILITIES
+  ------------------------------------ */
+.container {
+  max-inline-size: 75rem;
+  margin-inline: auto;
+  padding: var(--space-sm);
+}

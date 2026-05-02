@@ -1,0 +1,66 @@
+/*  ====================================
+    tokens.css 
+    ==================================== */
+
+:root {
+  /* Colors */
+
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-blue-50: hsl(240, 78%, 98%);
+  --clr-blue-90: hsl(240, 11%, 95%);
+  --clr-gray-650: hsl(233, 13%, 49%);
+  --clr-gray-700: hsl(232, 13%, 33%);
+  --clr-gray-900: hsl(231, 55%, 20%);
+  --clr-light-blue: hsl(237, 73%, 79%);
+  --clr-blue: hsl(238, 63%, 64%);
+
+  --clr-gradient-blue: linear-gradient(
+    50deg,
+    var(--clr-light-blue),
+    var(--clr-blue)
+  );
+
+  /* Colors - variations */
+  --clr-very-light-gray: hsl(233, 13%, 85%);
+  --clr-very-light-blue: hsl(240, 78%, 85%);
+
+  /* Colors - semantic */
+  --clr-bg-body: var(--clr-blue-90);
+
+  --clr-text-primary: var(--clr-gray-700);
+  --clr-text-secondary: var(--clr-gray-650);
+  --clr-accent: var(--clr-gray-900);
+
+  --clr-border-dark: var(--clr-very-light-gray);
+  --clr-border-light: var(--clr-very-light-blue);
+
+  /* Spacings */
+
+  --space-xs: clamp(0.5rem, calc(1vw + 0.5625rem), 0.625rem); /* 8px - 10px */
+  --space-sm: clamp(0.75rem, calc(2vw + 0.5rem), 1rem); /* 12px - 16px */
+  --space-md: clamp(1rem, calc(3vw + 1rem), 2rem); /* 16px - 32px */
+  --space-lg: clamp(2rem, calc(5vw + 1.125rem), 2.25rem); /* 32px - 36px */
+  --space-xl: clamp(2.625rem, calc(5vw + 1.875rem), 3rem); /* 40px -42px */
+
+  /* Typography */
+  --ff-body: "Montserrat", sans-serif;
+
+  --fs-base: 0.9375rem; /* 15px */
+
+  --fs-h1: clamp(1.5rem, calc(3vw + 1rem), 2rem); /* 24px - 32px */
+  --fs-h2: clamp(0.875rem, calc(1vw + 0.7rem), 1rem); /* 14px - 16px */
+  --fs-text-sm: clamp(0.75rem, calc(0.5vw + 0.75rem), 0.875rem);
+  --fs-text-md: clamp(0.875rem, calc(0.5vw + 0.87rem), 1rem); /* 14px - 16px */
+  --fs-price: clamp(2.25rem, calc(5vw + 1.75rem), 2.4rem); /* 36px - 38.4px */
+
+  --fw-regular: 400;
+  --fw-bold: 700;
+
+  /* Border radius */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 2.125rem;
+
+  /* Box shadows */
+  --shadow-card: 2px 2px 20px 0px rgba(0, 0, 0, 0.15);
+}
