@@ -1,25 +1,24 @@
-const DATA_URL = "./js/data.json";
-
 function showPlans(plans) {
   const cards = document.getElementById("cards");
-
   cards.innerHTML = "";
 
-  plans.forEach((plan) => {
+  plans.forEach((plan, index) => {
     const planElement = document.createElement("div");
     planElement.classList.add("plan__card");
+
+    if (index === 1) {
+      planElement.classList.add("plan__card--highlighted");
+    }
+
+    const annualHidden = showPrice ? "is-hidden" : "";
+    const monthlyHidden = !showPrice ? "is-hidden" : "";
 
     planElement.innerHTML = `
      
       <h2 class="plan__name">${plan.name}</h2>
 
-      <p class="price  price--yearly ${
-        !showPrice ? "active" : ""
-      }">&dollar; ${plan.yearly} </p>
-
-      <p class="price  price--monthly ${
-        showPrice ? "active" : ""
-      } ">&dollar; ${plan.monthly} </p>
+      <p class="price  price--yearly ${annualHidden}">&dollar; ${plan.yearly} </p>
+      <p class="price  price--monthly ${monthlyHidden}">&dollar; ${plan.monthly} </p>
       
       <ul class="features">
           ${plan.features
@@ -39,32 +38,32 @@ function updateToggle() {
   const monthlyLabel = document.getElementById("monthly-label");
   const yearlyLabel = document.getElementById("yearly-label");
 
-  if (showPrice) {
-    monthlyLabel.classList.add("active");
-    yearlyLabel.classList.remove("active");
-  } else {
-    monthlyLabel.classList.remove("active");
-    yearlyLabel.classList.add("active");
-  }
+  monthlyLabel.classList.toggle("active", showPrice);
+  yearlyLabel.classList.toggle("active", !showPrice);
+}
+
+function renderApp(data) {
+  showPlans(data);
+  updateToggle();
 }
 
 let showPrice = false;
 
 function initialize(data) {
-  showPlans(data);
-  updateToggle();
-
   const toggle = document.getElementById("price-toggle");
 
-  toggle.addEventListener("change", function () {
-    showPrice = this.checked;
+  showPrice = toggle.checked;
 
-    showPlans(data);
-    updateToggle();
+  renderApp(data);
+
+  toggle.addEventListener("change", (e) => {
+    showPrice = e.target.checked;
+
+    renderApp(data);
   });
 }
 
-fetch(DATA_URL)
+fetch("./js/data.json")
   .then((response) => {
     if (!response.ok) {
       throw new Error("Error");
