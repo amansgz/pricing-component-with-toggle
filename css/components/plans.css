@@ -1,0 +1,69 @@
+/*  ====================================
+    plans.css
+    ==================================== */
+
+@import "./toggle.css";
+@import "./buttons.css";
+
+.plans__title {
+  text-align: center;
+}
+
+.plan__card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+
+  padding: var(--space-lg);
+  margin-block-end: var(--space-md);
+
+  text-align: center;
+  background-color: var(--clr-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}
+
+.price {
+  font-size: var(--fs-price);
+  font-weight: var(--fw-bold);
+
+  align-self: center;
+}
+
+/* For toggle prices */
+.is-hidden {
+  display: none;
+}
+
+.features {
+  border-top: 1px solid var(--clr-border-dark);
+}
+
+.feature__item {
+  padding-block: var(--space-sm);
+  font-size: var(--fs-text-sm);
+  font-weight: var(--fw-bold);
+  color: var(--gray-text-primary);
+  border-bottom: 1px solid var(--clr-border-dark);
+}
+
+/* Middle card */
+.plan__card--highlighted {
+  color: var(--clr-white);
+  background-image: var(--clr-gradient-blue);
+}
+
+.plan__card--highlighted .features {
+  border-top: 1px solid var(--clr-border-light);
+}
+
+.plan__card--highlighted .feature__item {
+  border-bottom: 1px solid var(--clr-border-light);
+}
+
+@media (min-width: 48rem) {
+  .plan__card--highlighted {
+    transform: scale(1.1);
+    z-index: 10;
+  }
+}

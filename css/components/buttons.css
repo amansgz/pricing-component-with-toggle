@@ -1,0 +1,50 @@
+/*  ====================================
+    buttons.css
+    ==================================== */
+
+.primary-btn {
+  display: inline-block;
+
+  padding: var(--space-xs);
+  margin-block-start: var(--space-sm);
+
+  background-image: var(--clr-gradient-blue);
+  border: 1px solid transparent; /* for border color hover */
+  border-radius: var(--radius-sm);
+
+  font-size: var(--fs-text-sm);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  color: var(--clr-white);
+
+  transition: 0.2s ease;
+}
+
+.primary-btn:hover,
+.primary-btn:focus-visible {
+  background-image: none;
+  border: 1px solid var(--clr-border-dark);
+  background-color: var(--clr-white);
+  color: var(--clr-text-secondary);
+}
+
+/* Middle card */
+.plan__card--highlighted .primary-btn {
+  background-image: none;
+  background-color: var(--clr-white);
+  color: var(--clr-text-secondary);
+}
+
+.plan__card--highlighted .primary-btn:hover,
+.plan__card--highlighted .primary-btn:focus-visible {
+  background-image: var(--clr-gradient-blue);
+
+  color: var(--clr-white);
+  border: 1px solid var(--clr-white);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .primary-btn {
+    transition-duration: 0.01ms;
+  }
+}
