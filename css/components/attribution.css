@@ -1,0 +1,23 @@
+/*  ====================================
+    attribution.css 
+    ==================================== */
+
+.attribution {
+  font-size: var(--fs-text-sm);
+  text-align: center;
+  color: var(--clr-text-secondary);
+}
+
+.attribution__link {
+  transition: color 0.2s ease;
+}
+
+.attribution__link:hover {
+  color: var(--clr-accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .attribution__link {
+    transition-duration: 0.01ms;
+  }
+}

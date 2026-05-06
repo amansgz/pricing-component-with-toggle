@@ -1,0 +1,57 @@
+/*  ====================================
+    layout.css - Page Layout Structures
+    ==================================== */
+
+main {
+  display: flex;
+  align-items: center;
+  min-block-size: 100dvh;
+
+  background-image: url("../assets/images/bg-top.svg");
+  background-repeat: no-repeat;
+  background-size: 25rem;
+  background-position: right -35vw top -4vh;
+}
+
+.plans {
+  flex: 1;
+}
+
+.plans__cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  inline-size: 80%;
+  margin-inline: auto;
+}
+
+.footer {
+  padding-block: var(--space-sm);
+  margin-block-start: auto;
+}
+
+/*-------------------------- *\
+  #MEDIA-QUERIES 
+\*-------------------------- */
+
+@media (min-width: 48rem) {
+  main {
+    background-image:
+      url("../assets/images/bg-top.svg"), url("../assets/images/bg-bottom.svg");
+    background-repeat: no-repeat, no-repeat;
+
+    background-size: 20rem, 25rem;
+    background-position:
+      right top,
+      left bottom;
+  }
+
+  .plans__cards {
+    grid-template-columns: repeat(3, 1fr);
+    justify-self: center;
+
+    margin-block-start: var(--space-xl);
+
+    inline-size: 100%;
+    max-inline-size: 60rem;
+  }
+}
