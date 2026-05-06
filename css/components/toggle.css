@@ -1,0 +1,88 @@
+/*  ====================================
+    toggle.css 
+    ==================================== */
+
+.toggle-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  inline-size: max(25%, 16rem);
+  margin-block: var(--space-md);
+  margin-inline: auto;
+  text-align: center;
+}
+
+.toggle-label {
+  font-weight: var(--fw-bold);
+  color: var(--clr-text-secondary);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  inline-size: 4rem;
+  block-size: 2rem;
+}
+
+.switch input {
+  /* hide checkbox but allow keyboard focus */
+  position: absolute;
+  opacity: 0;
+  inline-size: 0;
+  block-size: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  inset-inline-end: 0;
+  inset-block-end: 0;
+  background-image: var(--clr-gradient-blue);
+  border-radius: var(--radius-lg);
+  transition: 0.4s ease;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  block-size: 1.5rem;
+  inline-size: 1.5rem;
+  inset-inline-start: 0.4rem;
+  inset-block-end: 0.3rem;
+  background-color: var(--clr-white);
+  border-radius: 50%;
+  transition: 0.4s ease;
+}
+
+.slider.round {
+  border-radius: var(--radius-lg);
+}
+
+input:checked + .slider {
+  background-image: var(--clr-gradient-blue);
+  opacity: 0.7;
+}
+
+/* focus visible for keyboard (not with mouse click) */
+input:focus-visible + .slider {
+  outline: 2px solid var(--clr-blue);
+  outline-offset: 3px;
+}
+
+input:checked + .slider:before {
+  transform: translateX(1.8rem);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slider,
+  .slider:before {
+    transition-duration: 0.01ms;
+  }
+}
+
+/* For toggle labels */
+.active {
+  display: block;
+}
